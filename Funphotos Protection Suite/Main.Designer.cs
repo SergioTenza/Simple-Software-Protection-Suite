@@ -1,6 +1,6 @@
 ﻿namespace Funphotos_Protection_Suite
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Variable del diseñador necesaria.
