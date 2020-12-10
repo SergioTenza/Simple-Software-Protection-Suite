@@ -107,7 +107,7 @@
             // labelClaveSecreta
             // 
             this.labelClaveSecreta.AutoSize = true;
-            this.labelClaveSecreta.Location = new System.Drawing.Point(100, 245);
+            this.labelClaveSecreta.Location = new System.Drawing.Point(12, 235);
             this.labelClaveSecreta.Name = "labelClaveSecreta";
             this.labelClaveSecreta.Size = new System.Drawing.Size(73, 13);
             this.labelClaveSecreta.TabIndex = 5;
@@ -115,7 +115,7 @@
             // 
             // textBoxClavePrivada
             // 
-            this.textBoxClavePrivada.Location = new System.Drawing.Point(179, 242);
+            this.textBoxClavePrivada.Location = new System.Drawing.Point(91, 232);
             this.textBoxClavePrivada.Name = "textBoxClavePrivada";
             this.textBoxClavePrivada.Size = new System.Drawing.Size(273, 20);
             this.textBoxClavePrivada.TabIndex = 7;
@@ -123,7 +123,7 @@
             // 
             // btnKeyGenerate
             // 
-            this.btnKeyGenerate.Location = new System.Drawing.Point(106, 278);
+            this.btnKeyGenerate.Location = new System.Drawing.Point(18, 268);
             this.btnKeyGenerate.Name = "btnKeyGenerate";
             this.btnKeyGenerate.Size = new System.Drawing.Size(346, 28);
             this.btnKeyGenerate.TabIndex = 8;
@@ -133,14 +133,14 @@
             // 
             // textBoxKey
             // 
-            this.textBoxKey.Location = new System.Drawing.Point(106, 312);
+            this.textBoxKey.Location = new System.Drawing.Point(18, 302);
             this.textBoxKey.Name = "textBoxKey";
             this.textBoxKey.Size = new System.Drawing.Size(346, 20);
             this.textBoxKey.TabIndex = 9;
             // 
             // btnSaveKey
             // 
-            this.btnSaveKey.Location = new System.Drawing.Point(106, 338);
+            this.btnSaveKey.Location = new System.Drawing.Point(18, 328);
             this.btnSaveKey.Name = "btnSaveKey";
             this.btnSaveKey.Size = new System.Drawing.Size(346, 28);
             this.btnSaveKey.TabIndex = 10;
@@ -179,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 374);
+            this.ClientSize = new System.Drawing.Size(391, 374);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -196,7 +196,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FunPhotos Protection Suite";
+            this.Text = "Protection Suite";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
