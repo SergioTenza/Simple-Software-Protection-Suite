@@ -3,9 +3,9 @@ C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphot
 C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\bin\Debug\Funphotos Protection Suite.exe
 C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\bin\Debug\Funphotos Protection Suite.pdb
 C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\obj\Debug\Protection Suite.csprojAssemblyReference.cache
-C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\obj\Debug\Funphotos_Protection_Suite.Form1.resources
 C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\obj\Debug\Funphotos_Protection_Suite.Properties.Resources.resources
 C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\obj\Debug\Protection Suite.csproj.GenerateResource.cache
 C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\obj\Debug\Protection Suite.csproj.CoreCompileInputs.cache
 C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\obj\Debug\Funphotos Protection Suite.exe
 C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\obj\Debug\Funphotos Protection Suite.pdb
+C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\obj\Debug\Funphotos_Protection_Suite.Main.resources

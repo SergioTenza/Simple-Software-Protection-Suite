@@ -64,7 +64,7 @@ namespace Funphotos_Protection_Suite
             }
             else
             {
-                MessageBox.Show("Introduzca una clave de 10 caracteres para continuar");
+                MessageBox.Show("Introduzca una clave de 25 caracteres para continuar");
             }
         }        
     }
