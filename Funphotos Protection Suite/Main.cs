@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -28,18 +29,15 @@ namespace Funphotos_Protection_Suite
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+                      
         }
         private void btnKeyGenerate_Click(object sender, EventArgs e)
         {
             textBoxKey.Text = "Trabajando. Espera porfavor";
             string hwid = HardwareID.GET_HARDWAREID;
-            textBoxKey.Text = hwid;            
-            labelCPU.Text = HardwareID.GET_CPUID;
-            labelHDD.Text = HardwareID.GET_HDDSIGNATURE;
-            labelMotherBoard.Text = HardwareID.GET_BIOSVERSION;
-
+            textBoxKey.Text = hwid;
             btnSaveKey.Enabled = true;
+            btnSaveKey.Focus();
         }
 
         private void btnSaveKey_Click(object sender, EventArgs e)
@@ -66,6 +64,42 @@ namespace Funphotos_Protection_Suite
             {
                 MessageBox.Show("Introduzca una clave de 25 caracteres para continuar");
             }
-        }        
+        }
+
+        private void btnGetData_Click(object sender, EventArgs e)
+        {
+            HardwareID.CollectData();
+            Thread.Sleep(2000);
+            foreach (var cpu in HardwareID.cpus)
+            {
+                comboBoxCpu.Items.Add(cpu);
+            }
+            foreach (var hdd in HardwareID.hdds)
+            {
+                comboBoxHdd.Items.Add(hdd);
+            }
+            foreach (var bios in HardwareID.bioses)
+            {
+                comboBoxBios.Items.Add(bios);
+            }
+            comboBoxCpu.SelectedIndex = comboBoxCpu.Items.Count - 1;
+            comboBoxHdd.SelectedIndex = comboBoxHdd.Items.Count - 1;
+            comboBoxBios.SelectedIndex = comboBoxBios.Items.Count - 1;
+        }
+
+        private void comboBoxBios_SelectedValueChanged(object sender, EventArgs e)
+        {
+            labelMotherBoard.Text = comboBoxBios.SelectedItem.ToString();
+        }
+
+        private void comboBoxCpu_SelectedValueChanged(object sender, EventArgs e)
+        {
+            labelCPU.Text = comboBoxCpu.SelectedItem.ToString();
+        }
+
+        private void comboBoxHdd_SelectedValueChanged(object sender, EventArgs e)
+        {
+            labelHDD.Text = comboBoxHdd.SelectedItem.ToString();
+        }
     }
 }
