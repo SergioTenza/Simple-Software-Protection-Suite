@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// Add the following namespace   
+using System.Text.RegularExpressions;
 
 namespace Funphotos_Protection_Suite
 {
@@ -23,26 +25,36 @@ namespace Funphotos_Protection_Suite
             btnSaveKey.Enabled = false;            
             textBoxClavePrivada.MaxLength = 25;
             textBoxClavePrivada.TextAlign = HorizontalAlignment.Center;
-            textBoxClavePrivada.Text = "Escriba aqui su clave privada (25 Caracteres)";
+            textBoxClavePrivada.Text = "Escriba aqui su clave privada (entre 15-25 Numeros)";
             textBoxKey.MaxLength = 25;
             textBoxKey.TextAlign = HorizontalAlignment.Center;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-                      
+            btnGetData.PerformClick();               
         }
         private void btnKeyGenerate_Click(object sender, EventArgs e)
         {
-            textBoxKey.Text = "Trabajando. Espera porfavor";
-            string hwid = HardwareID.GET_HARDWAREID;
-            textBoxKey.Text = hwid;
-            btnSaveKey.Enabled = true;
-            btnSaveKey.Focus();
+            this.Cursor = Cursors.WaitCursor;
+            string keyPattern = @"^[0-9]\d{14,24}$";
+            bool isKeyValid = Regex.IsMatch(textBoxClavePrivada.Text, keyPattern);
+            if (!isKeyValid)
+            {
+                MessageBox.Show("Please enter a valid key between 15-25 Numbers");
+            }
+            else
+            {
+                HardwareID.PRIVATE_KEY = textBoxClavePrivada.Text;
+                textBoxKey.Text = HardwareID.ReturnKey();
+                btnSaveKey.Enabled = true;
+                btnSaveKey.Focus();
+            }
+            this.Cursor = Cursors.Default;
         }
 
         private void btnSaveKey_Click(object sender, EventArgs e)
         {
-            if (textBoxClavePrivada.Text != "Escriba aqui su clave privada (25 Caracteres)")
+            if (textBoxClavePrivada.Text != "Escriba aqui su clave privada (15-25 numeros)")
             {
                 FolderBrowserDialog folderDlg = new FolderBrowserDialog();
                 folderDlg.ShowNewFolderButton = true;
@@ -56,20 +68,24 @@ namespace Funphotos_Protection_Suite
 
                     using (StreamWriter outputFile = new StreamWriter(Path.Combine(folderDlg.SelectedPath, "key.txt"), true))
                     {
-                        outputFile.WriteLine(HardwareID.GET_HARDWAREID);
+                        outputFile.WriteLine(HardwareID.ReturnKey());
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Introduzca una clave de 25 caracteres para continuar");
+                MessageBox.Show("Introduzca una clave entre 15-25 numeros para continuar");
             }
         }
 
         private void btnGetData_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
+            comboBoxBios.Items.Clear();
+            comboBoxCpu.Items.Clear();
+            comboBoxHdd.Items.Clear();
             HardwareID.CollectData();
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             foreach (var cpu in HardwareID.cpus)
             {
                 comboBoxCpu.Items.Add(cpu);
@@ -85,6 +101,7 @@ namespace Funphotos_Protection_Suite
             comboBoxCpu.SelectedIndex = comboBoxCpu.Items.Count - 1;
             comboBoxHdd.SelectedIndex = comboBoxHdd.Items.Count - 1;
             comboBoxBios.SelectedIndex = comboBoxBios.Items.Count - 1;
+            this.Cursor = Cursors.Default;
         }
 
         private void comboBoxBios_SelectedValueChanged(object sender, EventArgs e)
@@ -100,6 +117,11 @@ namespace Funphotos_Protection_Suite
         private void comboBoxHdd_SelectedValueChanged(object sender, EventArgs e)
         {
             labelHDD.Text = comboBoxHdd.SelectedItem.ToString();
+        }
+
+        private void textBoxClavePrivada_Enter(object sender, EventArgs e)
+        {
+            textBoxClavePrivada.Text = "";
         }
     }
 }

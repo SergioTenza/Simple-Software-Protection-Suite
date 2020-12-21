@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -47,11 +46,9 @@
             this.comboBoxCpu = new System.Windows.Forms.ComboBox();
             this.comboBoxHdd = new System.Windows.Forms.ComboBox();
             this.btnGetData = new System.Windows.Forms.Button();
-            this.computerDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.computerDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -131,10 +128,12 @@
             this.textBoxClavePrivada.TabIndex = 7;
             this.textBoxClavePrivada.Text = "Escriba aqui su clave privada (25 Caracteres)";
             this.textBoxClavePrivada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxClavePrivada.Enter += new System.EventHandler(this.textBoxClavePrivada_Enter);
             // 
             // btnKeyGenerate
             // 
-            this.btnKeyGenerate.Location = new System.Drawing.Point(106, 295);
+            this.btnKeyGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKeyGenerate.Location = new System.Drawing.Point(104, 279);
             this.btnKeyGenerate.Name = "btnKeyGenerate";
             this.btnKeyGenerate.Size = new System.Drawing.Size(236, 28);
             this.btnKeyGenerate.TabIndex = 8;
@@ -144,14 +143,15 @@
             // 
             // textBoxKey
             // 
-            this.textBoxKey.Location = new System.Drawing.Point(106, 329);
+            this.textBoxKey.Location = new System.Drawing.Point(105, 313);
             this.textBoxKey.Name = "textBoxKey";
             this.textBoxKey.Size = new System.Drawing.Size(236, 20);
             this.textBoxKey.TabIndex = 9;
             // 
             // btnSaveKey
             // 
-            this.btnSaveKey.Location = new System.Drawing.Point(106, 355);
+            this.btnSaveKey.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveKey.Location = new System.Drawing.Point(105, 339);
             this.btnSaveKey.Name = "btnSaveKey";
             this.btnSaveKey.Size = new System.Drawing.Size(236, 28);
             this.btnSaveKey.TabIndex = 10;
@@ -215,7 +215,8 @@
             // 
             // btnGetData
             // 
-            this.btnGetData.Location = new System.Drawing.Point(106, 261);
+            this.btnGetData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGetData.Location = new System.Drawing.Point(105, 245);
             this.btnGetData.Name = "btnGetData";
             this.btnGetData.Size = new System.Drawing.Size(236, 28);
             this.btnGetData.TabIndex = 17;
@@ -223,15 +224,11 @@
             this.btnGetData.UseVisualStyleBackColor = true;
             this.btnGetData.Click += new System.EventHandler(this.btnGetData_Click);
             // 
-            // computerDataBindingSource
-            // 
-            this.computerDataBindingSource.DataSource = typeof(Funphotos_Protection_Suite.ComputerData);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 395);
+            this.ClientSize = new System.Drawing.Size(362, 403);
             this.Controls.Add(this.btnGetData);
             this.Controls.Add(this.comboBoxHdd);
             this.Controls.Add(this.comboBoxCpu);
@@ -257,7 +254,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.computerDataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,7 +275,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.BindingSource computerDataBindingSource;
         private System.Windows.Forms.ComboBox comboBoxBios;
         private System.Windows.Forms.ComboBox comboBoxCpu;
         private System.Windows.Forms.ComboBox comboBoxHdd;
