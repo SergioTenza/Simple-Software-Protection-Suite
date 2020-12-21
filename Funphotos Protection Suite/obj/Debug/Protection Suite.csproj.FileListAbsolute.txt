@@ -1,4 +1,3 @@
-C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\bin\Debug\UDPSocket.cs
 C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\bin\Debug\Funphotos Protection Suite.exe.config
 C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\bin\Debug\Funphotos Protection Suite.exe
 C:\Users\serge\Source\Repos\SergioTenza\Simple-Software-Protection-Suite\Funphotos Protection Suite\bin\Debug\Funphotos Protection Suite.pdb
