@@ -1,4 +1,7 @@
 # Simple-Software-Protection-Suite
+
+##UPDATED TO NET 6 WINFORMS AND LIBRARY
+
 Simple attempt to generate a class to create protection keys for software.   
 One of my customers want a not so complicated method to try to get a minimum of security for his propietary software.  
 This is that project.</br>  
