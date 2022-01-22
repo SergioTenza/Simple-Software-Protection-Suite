@@ -10,5 +10,3 @@ Just this! returns **TRUE** or **FALSE**.
  
 There are plenty of paid protection suites a lot more robust and strong.  
 As an free software and fully Opensource defender I made the class available to anyone that needs this little tool.
-
-Actually Working on Development BRANCH
