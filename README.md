@@ -1,4 +1,4 @@
-# Simple-Software-Protection-Suite
+# Simple-Software-Protection-Suite .NET 6 (Windows Only)
 
 ##UPDATED TO NET 6 WINFORMS AND LIBRARY
 
@@ -12,4 +12,4 @@ The class can generate a key that you can store and check on your keys server or
 Just this! returns **TRUE** or **FALSE**.  
  
 There are plenty of paid protection suites a lot more robust and strong.  
-As an free software and fully Opensource defender I made the class available to anyone that needs this little tool.
+As an free software and fully Opensource beleiver I made the library available to anyone that needs this little tool.
