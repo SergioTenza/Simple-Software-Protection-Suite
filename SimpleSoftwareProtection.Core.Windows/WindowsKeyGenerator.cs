@@ -1,10 +1,4 @@
 ﻿using SimpleSoftwareProtection.Core.Interfaces;
-using SimpleSoftwareProtection.Core.Interfaces.Brokers.BiosBroker;
-using SimpleSoftwareProtection.Core.Interfaces.Brokers.CpuBroker;
-using SimpleSoftwareProtection.Core.Interfaces.Brokers.HddBroker;
-using SimpleSoftwareProtection.Core.Windows.Brokers.BiosBroker;
-using SimpleSoftwareProtection.Core.Windows.Brokers.CpuBroker;
-using SimpleSoftwareProtection.Core.Windows.Brokers.HddBroker;
 using System.Text;
 
 namespace SimpleSoftwareProtection.Core.Windows
@@ -12,24 +6,21 @@ namespace SimpleSoftwareProtection.Core.Windows
     public sealed class WindowsKeyGenerator : IWindowsKeyGenerator
     {
         private readonly string _privateKey;
-        private readonly ICpuBroker _cpuBroker;
-        private readonly IHddBroker _hddBroker;
-        private readonly IBiosBroker _biosBroker;
+        private readonly string _cpuId;
+        private readonly string _hddId;
+        private readonly string _biosId;
 
-        public WindowsKeyGenerator(string privateKey)
+        public WindowsKeyGenerator(string privateKey, string cpuId, string hddId, string biosId)
         {
             this._privateKey = privateKey;
-            _cpuBroker = new CpuBroker();
-            _hddBroker = new HddBroker();
-            _biosBroker = new BiosBroker();
+            this._cpuId = cpuId;
+            this._hddId = hddId;
+            this._biosId = biosId;
         }
 
         public string ReturnKey()
         {
-            var cpu = this._cpuBroker.GetCpuId();
-            var hdd = this._hddBroker.GetHddId();
-            var bios = this._biosBroker.GetBiosId();
-            var generatedKey = $"{cpu}{hdd}{bios}{_privateKey}";
+            var generatedKey = $"{_cpuId}{_hddId}{_biosId}{_privateKey}";
             byte[] bytes = Encoding.UTF8.GetBytes(generatedKey);
             byte[] hashedBytes = System.Security.Cryptography.SHA256.Create().ComputeHash(bytes);
             return Convert.ToBase64String(hashedBytes);

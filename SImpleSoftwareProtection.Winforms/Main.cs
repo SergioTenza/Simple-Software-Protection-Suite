@@ -24,7 +24,7 @@ namespace SImpleSoftwareProtection.Winforms
         private void btnKeyGenerate_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-            _windowsKeyGenerator = new WindowsKeyGenerator(textBoxClavePrivada.Text);
+            _windowsKeyGenerator = new WindowsKeyGenerator(textBoxClavePrivada.Text, labelCPU.Text,labelHDD.Text,labelMotherBoard.Text);
             textBoxKey.Text = _windowsKeyGenerator.ReturnKey();
             btnSaveKey.Enabled = true;
             btnSaveKey.Focus();
@@ -33,7 +33,7 @@ namespace SImpleSoftwareProtection.Winforms
 
         private void btnSaveKey_Click(object sender, EventArgs e)
         {
-            if (textBoxClavePrivada.Text != "Escriba aqui su clave privada (15-25 numeros)")
+            if (textBoxClavePrivada.Text != "Escriba aqui su clave privada")
             {
                 FolderBrowserDialog folderDlg = new FolderBrowserDialog();
                 folderDlg.ShowNewFolderButton = true;
