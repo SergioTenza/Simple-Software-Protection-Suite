@@ -4,9 +4,9 @@
 
 [x] WINFORMS UTILITY     
 [x] WINDOWS ONLY LIBRARY     
-[] LINUX ONLY LIBRARY     
-[] MACOS ONLY LIBRARY      
-[] NET STANDARD 2.0 LIBRARY     
+[ ] LINUX ONLY LIBRARY     
+[ ] MACOS ONLY LIBRARY      
+[ ] NET STANDARD 2.0 LIBRARY     
 
 Simple attempt to generate a class to create protection keys for software.   
 One of my customers want a not so complicated method to try to get a minimum of security for his propietary software.  
