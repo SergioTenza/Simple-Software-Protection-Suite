@@ -1,22 +1,20 @@
-﻿// Add the following namespace   
-using SimpleSoftwareProtection.Library;
-using System.Text.RegularExpressions;
+﻿
+using SimpleSoftwareProtection.Core.Interfaces;
+using SimpleSoftwareProtection.Core.Windows;
 
 namespace SImpleSoftwareProtection.Winforms
 {
     public partial class Main : Form
     {
-        private readonly HardwareID hardwareID;
+        private IWindowsKeyGenerator? _windowsKeyGenerator;
+        private IWindowsHardwareInfo? _windowsHardwareInfo;
 
         public Main()
         {
             InitializeComponent();
-
             btnSaveKey.Enabled = false;
-            textBoxClavePrivada.MaxLength = 25;
             textBoxClavePrivada.TextAlign = HorizontalAlignment.Center;
-            textBoxClavePrivada.Text = "Escriba aqui su clave privada (entre 15-25 Numeros)";
-            textBoxKey.MaxLength = 25;
+            textBoxClavePrivada.Text = "Escriba aqui su clave privada";
             textBoxKey.TextAlign = HorizontalAlignment.Center;
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -26,19 +24,10 @@ namespace SImpleSoftwareProtection.Winforms
         private void btnKeyGenerate_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-            string keyPattern = @"^[0-9]\d{14,24}$";
-            bool isKeyValid = Regex.IsMatch(textBoxClavePrivada.Text, keyPattern);
-            if (!isKeyValid)
-            {
-                MessageBox.Show("Please enter a valid key between 15-25 Numbers");
-            }
-            else
-            {
-                HardwareID.PRIVATE_KEY = textBoxClavePrivada.Text;
-                textBoxKey.Text = HardwareID.ReturnKey();
-                btnSaveKey.Enabled = true;
-                btnSaveKey.Focus();
-            }
+            _windowsKeyGenerator = new WindowsKeyGenerator(textBoxClavePrivada.Text);
+            textBoxKey.Text = _windowsKeyGenerator.ReturnKey();
+            btnSaveKey.Enabled = true;
+            btnSaveKey.Focus();
             this.Cursor = Cursors.Default;
         }
 
@@ -58,7 +47,7 @@ namespace SImpleSoftwareProtection.Winforms
 
                     using (StreamWriter outputFile = new StreamWriter(Path.Combine(folderDlg.SelectedPath, "key.txt"), true))
                     {
-                        outputFile.WriteLine(HardwareID.ReturnKey());
+                        outputFile.WriteLine(_windowsKeyGenerator?.ReturnKey());
                     }
                 }
             }
@@ -74,23 +63,33 @@ namespace SImpleSoftwareProtection.Winforms
             comboBoxBios.Items.Clear();
             comboBoxCpu.Items.Clear();
             comboBoxHdd.Items.Clear();
-            HardwareID.CollectData();
-            //Thread.Sleep(2000);
-            foreach (var cpu in HardwareID.cpus)
+            _windowsHardwareInfo = new WindowsHardwareInfo();
+            _windowsHardwareInfo.CollectData();
+            if (_windowsHardwareInfo.Cpus.Any())
             {
-                comboBoxCpu.Items.Add(cpu);
+                foreach (var cpu in _windowsHardwareInfo.Cpus)
+                {
+                    comboBoxCpu.Items.Add(cpu);
+                }
+                
             }
-            foreach (var hdd in HardwareID.hdds)
+            comboBoxCpu.SelectedIndex = comboBoxCpu.Items.Count > 0 ? comboBoxCpu.Items.Count - 1 : 0;
+            if (_windowsHardwareInfo.Hdds.Any())
             {
-                comboBoxHdd.Items.Add(hdd);
+                foreach (var hdd in _windowsHardwareInfo.Hdds)
+                {
+                    comboBoxHdd.Items.Add(hdd);
+                }
             }
-            foreach (var bios in HardwareID.bioses)
+            comboBoxHdd.SelectedIndex = comboBoxCpu.Items.Count > 0 ? comboBoxCpu.Items.Count - 1 : 0;
+            if (_windowsHardwareInfo.Bios.Any())
             {
-                comboBoxBios.Items.Add(bios);
+                foreach (var bios in _windowsHardwareInfo.Bios)
+                {
+                    comboBoxBios.Items.Add(bios);
+                }
             }
-            comboBoxCpu.SelectedIndex = comboBoxCpu.Items.Count - 1;
-            comboBoxHdd.SelectedIndex = comboBoxHdd.Items.Count - 1;
-            comboBoxBios.SelectedIndex = comboBoxBios.Items.Count - 1;
+            comboBoxBios.SelectedIndex = comboBoxCpu.Items.Count > 0 ? comboBoxCpu.Items.Count - 1 : 0;
             this.Cursor = Cursors.Default;
         }
 

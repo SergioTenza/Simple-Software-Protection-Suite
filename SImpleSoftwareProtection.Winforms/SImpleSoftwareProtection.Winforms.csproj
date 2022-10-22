@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SimpleSoftwareProtection.Library\SimpleSoftwareProtection.Library.csproj" />
+    <ProjectReference Include="..\SimpleSoftwareProtection.Core.Windows\SimpleSoftwareProtection.Core.Windows.csproj" />
   </ItemGroup>
 
   <ItemGroup>
