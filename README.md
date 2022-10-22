@@ -17,7 +17,7 @@ Nothing unbeteable, nothing complicated just a little layer of protection for yo
 This form allows you to select CPU_ID, HDD_ID and BIOS_ID and generate base64 string keys wiht SHA256 encryption based on supplied SECRET     
 ### WINDOWS ONLY LIBRARY
 
-```
+```csharp
 var hwInfo = new WindowsHardwareInfo();
 hwInfo.CollectData(); // Fills Collections of Hardware Info
 hwInfo.Cpus; // List<string> containing cpu_ids
