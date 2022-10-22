@@ -25,7 +25,7 @@ hwInfo.Hdds; // List<string> containing hdd_ids
 hwInfo.Bios; // List<string> containing motherboard_bios_ids
 
 var secret = "MY_SUPER_SECRET_KEY";
-var keyGenerator = new WindowsKeyGenerator(secret);
+var keyGenerator = new WindowsKeyGenerator(secret,hwInfo.Cpus.First(),hwInfo.Hdds.First(),hwInfo.Bios.First());
 var generatedKey = keyGenerator.ReturnKey();  //base64 string with SHA256 encryptedkey based on present hardware
 ```
 
