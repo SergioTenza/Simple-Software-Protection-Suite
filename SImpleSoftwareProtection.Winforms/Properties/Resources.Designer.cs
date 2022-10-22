@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SImpleSoftwareProtection.Winforms.Properties {
+namespace SimpleSoftwareProtection.Winforms.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SImpleSoftwareProtection.Winforms.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SImpleSoftwareProtection.Winforms.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SimpleSoftwareProtection.Winforms.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -53,7 +53,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SImpleSoftwareProtection.Winforms.Properties.Resources.motherboard;
+            this.pictureBox1.Image = global::SimpleSoftwareProtection.Winforms.Properties.Resources.motherboard;
             this.pictureBox1.Location = new System.Drawing.Point(14, 14);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -64,7 +64,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::SImpleSoftwareProtection.Winforms.Properties.Resources.cpu;
+            this.pictureBox2.Image = global::SimpleSoftwareProtection.Winforms.Properties.Resources.cpu;
             this.pictureBox2.Location = new System.Drawing.Point(14, 95);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox2.Name = "pictureBox2";
@@ -75,7 +75,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::SImpleSoftwareProtection.Winforms.Properties.Resources.harddisk;
+            this.pictureBox3.Image = global::SimpleSoftwareProtection.Winforms.Properties.Resources.harddisk;
             this.pictureBox3.Location = new System.Drawing.Point(14, 175);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox3.Name = "pictureBox3";
