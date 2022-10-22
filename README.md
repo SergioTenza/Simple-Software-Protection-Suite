@@ -1,6 +1,6 @@
 # Simple-Software-Protection-Suite .NET 6
 
-## UPDATED TO NET 6 
+## SHA256 Symmetric Encryption Keys
 
 [x] WINFORMS UTILITY     
 [x] WINDOWS ONLY LIBRARY     
