@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleSoftwareProtection.Winforms", "SImpleSoftwareProtection.Winforms\SimpleSoftwareProtection.Winforms.csproj", "{7C602054-4B2D-4271-84DC-327D98997604}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleSoftwareProtection.Library", "SimpleSoftwareProtection.Library\SimpleSoftwareProtection.Library.csproj", "{5C484C51-8D71-4112-B526-4A2A1951B82E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleSoftwareProtection.Windows.Tests.Unit", "SimpleSoftwareProtection.Tests.Unit\SimpleSoftwareProtection.Windows.Tests.Unit.csproj", "{4A2DF9B4-FF59-4EE6-84E3-E00EB3BEA7E0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleSoftwareProtection.Core.Windows", "SimpleSoftwareProtection.Core.Windows\SimpleSoftwareProtection.Core.Windows.csproj", "{CA72D3D8-E827-4C43-BAAA-C5AB5D61F767}"
@@ -27,10 +25,6 @@ Global
 		{7C602054-4B2D-4271-84DC-327D98997604}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C602054-4B2D-4271-84DC-327D98997604}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C602054-4B2D-4271-84DC-327D98997604}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C484C51-8D71-4112-B526-4A2A1951B82E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C484C51-8D71-4112-B526-4A2A1951B82E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C484C51-8D71-4112-B526-4A2A1951B82E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C484C51-8D71-4112-B526-4A2A1951B82E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A2DF9B4-FF59-4EE6-84E3-E00EB3BEA7E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A2DF9B4-FF59-4EE6-84E3-E00EB3BEA7E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A2DF9B4-FF59-4EE6-84E3-E00EB3BEA7E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
