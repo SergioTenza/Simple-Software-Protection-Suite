@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleSoftwareProtection.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleSoftwareProtection.Core", "SimpleSoftwareProtection.Core\SimpleSoftwareProtection.Core.csproj", "{3DB00623-9108-4709-B124-BD8B6525E367}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSoftwareProtection.Core.Decryption", "SimpleSoftwareProtection.Core.Decryption\SimpleSoftwareProtection.Core.Decryption.csproj", "{60DB8BAA-73B8-4D27-82C4-B5C03B7A3289}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSoftwareProtection.Standard.Tests.Unit", "SimpleSoftwareProtection.Standard.Tests.Unit\SimpleSoftwareProtection.Standard.Tests.Unit.csproj", "{9591EF4F-2991-453F-869C-C76A48EF6A88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{3DB00623-9108-4709-B124-BD8B6525E367}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DB00623-9108-4709-B124-BD8B6525E367}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DB00623-9108-4709-B124-BD8B6525E367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60DB8BAA-73B8-4D27-82C4-B5C03B7A3289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60DB8BAA-73B8-4D27-82C4-B5C03B7A3289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60DB8BAA-73B8-4D27-82C4-B5C03B7A3289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60DB8BAA-73B8-4D27-82C4-B5C03B7A3289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9591EF4F-2991-453F-869C-C76A48EF6A88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9591EF4F-2991-453F-869C-C76A48EF6A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9591EF4F-2991-453F-869C-C76A48EF6A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9591EF4F-2991-453F-869C-C76A48EF6A88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

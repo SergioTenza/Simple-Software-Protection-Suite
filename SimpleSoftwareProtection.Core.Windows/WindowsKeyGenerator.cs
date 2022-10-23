@@ -28,7 +28,10 @@ namespace SimpleSoftwareProtection.Core.Windows
 
         public ValueTask<string> ReturnKeyAsync()
         {
-            throw new NotImplementedException();
+            var generatedKey = $"{_cpuId}{_hddId}{_biosId}{_privateKey}";
+            byte[] bytes = Encoding.UTF8.GetBytes(generatedKey);
+            byte[] hashedBytes = System.Security.Cryptography.SHA256.Create().ComputeHash(bytes);
+            return new ValueTask<string>(Convert.ToBase64String(hashedBytes));
         }
     }
 }
