@@ -1,12 +1,12 @@
-# Simple-Software-Protection-Suite .NET 6
+﻿# Simple-Software-Protection-Suite .NET 7
 
-## SHA256 Symmetric Encryption Keys
+## UPDATED TO .NET 7   
 
-[x] WINFORMS UTILITY     
-[x] WINDOWS ONLY LIBRARY     
-[ ] LINUX ONLY LIBRARY     
-[ ] MACOS ONLY LIBRARY      
-[ ] NET STANDARD 2.0 LIBRARY     
+[ <span style="color:green">✓</span> ] WINFORMS UTILITY  
+[ <span style="color:green">✓</span> ] WINDOWS ONLY LIBRARY   
+[ <span style="color:red">X</span> ] LINUX ONLY LIBRARY   
+[ <span style="color:red">X</span> ] MACOS ONLY LIBRARY    
+[ <span style="color:red">X</span> ] NET STANDARD 2.0 LIBRARY    
 
 Simple attempt to generate a class to create protection keys for software.   
 One of my customers want a not so complicated method to try to get a minimum of security for his propietary software.  
